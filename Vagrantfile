@@ -14,6 +14,8 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/bionic64"
   
+  config.vagrant.plugins = "vagrant-hostsupdater"
+  
   config.vm.network "forwarded_port", host: 8080, guest: 80
   config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.hostname = "vagrant.local"
